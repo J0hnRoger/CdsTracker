@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cds Time Tracker</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="content/css/cds-tracker.css">
+	<link rel="stylesheet" href="directives/timer/timer.directive.css">
+	<!--[if lte IE 8]>
+	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+	<![endif]-->
+	<!--[if gt IE 8]><!-->
+
+	<!--<![endif]-->
+</head>
+<body>
+	<div ng-app="app">
+		<div ng-view />
+	</div>
+	
+	<!-- libs -->
+	<script src="lib/jquery.js"></script>
+  	<script src="lib/angular.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+  	<script src="lib/angular-route.min.js"></script>
+  	<script src="lib/angularfire.min.js"></script>
+  	<script src="lib/angular-mocks.js"></script>
+  	<!-- features -->
+	<script src="filters/time.filters.js"></script>
+	<script src="directives/timer/app.directive.timer.js"></script>
+	<script src="directives/app.directives.resizable.js"></script>
+	<script src="app.module.js"></script>
+	<script src="timetracker/timetracker.js"></script>
+	<script src="task-bumper/task-bumper.js"></script>
+</body>
+</html>
