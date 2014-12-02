@@ -1,5 +1,22 @@
-[{ "title" : "CCPA", "color" : "azur", "elapsedTime" : 0, "isActive" : false},
-{ "title" : "PMU", "color" : "green", "elapsedTime" : 0, "isActive" : false},
-{ "title" : "CDS", "color" : "orange" , "elapsedTime" : 0, "isActive" : false},
-{ "title" : "Expanscience", "color" : "blue" , "elapsedTime" : 0, "isActive" : false} ,
-{ "title" : "Nicoll", "color" : "red" , "elapsedTime" : 0, "isActive" : false} ]
+{
+    "CCPA" : {
+        "color": "azur",
+        "isActive": false
+    },
+    "PMU" : {
+        "color": "green",
+        "isActive": false
+    },
+    "CDS" :{    
+        "color": "orange",
+        "isActive": false
+    },
+    "Expanscience" :{
+        "color": "blue",
+        "isActive": false
+    },
+    "Nicoll" :{
+        "color": "red",
+        "isActive": false
+    }
+}

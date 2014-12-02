@@ -1,0 +1,27 @@
+{
+  "CCPA" : {
+    "color" : "azur",
+    "isActive" : false,
+    "title" : "CCPA"
+  },
+  "CDS" : {
+    "color" : "blue",
+    "isActive" : false,
+    "title" : "CDS"
+  },
+  "Expanscience" : {
+    "color" : "orange",
+    "isActive" : false,
+    "title" : "Expanscience"
+  },
+  "Nicoll" : {
+    "color" : "red",
+    "isActive" : false,
+    "title" : "Nicoll"
+  },
+  "PMU" : {
+    "color" : "green",
+    "isActive" : false,
+    "title" : "PMU"
+  }
+}
