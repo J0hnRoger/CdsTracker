@@ -1,0 +1,35 @@
+<h1>Invoice</h1>
+
+<div class="invoice-view">
+  <tabset>
+    <tab heading="Général">
+      <div class="table-responsive">
+        <table class="table table-striped" >
+          <tr>
+            <th>Projets</th>
+            <th>Corrections Facturées</th>
+            <th>Evolutions facturées</th>
+          </tr>
+          <tbody>
+            <tr ng-repeat="project in projects">
+              <td>{{project.title}}</td>
+              <td>
+              	<span ng-click="editingCorr = true;" ng-hide="editingCorr">{{project.correction}}</span>
+              	<input type="text" autofocus="editingCorr" ng-blur="updateCorrection(project, $event.target.value);editingCorr=false;" ng-show="editingCorr" ng-value="project.correction"></td>
+              <td>	
+              	<span ng-click="editingEvo = true;" ng-hide="editingEvo">{{project.evolution}}</span>
+              	<input type="text" autofocus="editingEvo" ng-blur="updateEvolution(project, $event.target.value);editingEvo=false;" ng-show="editingEvo" ng-value="project.evolution"></td></td>
+            </tr>
+        </tbody>
+          <tr>
+            <th>Total</th>
+            <th>{{total("correction")}} jours </th>
+            <th>{{total("evolution")}} jours </th>
+          </tr>
+        </table>
+    </div>
+    </tab>
+  </tabset>
+
+  <hr />
+</div>

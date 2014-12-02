@@ -1,6 +1,10 @@
 {
   "name": "angular",
+<<<<<<< HEAD
   "version": "1.3.4",
+=======
+  "version": "1.2.27",
+>>>>>>> Development/invoice
   "description": "HTML enhanced for web apps",
   "main": "angular.js",
   "scripts": {

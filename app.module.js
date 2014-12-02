@@ -11,10 +11,13 @@
             'app.service.date',
             'app.service.projects',
             'app.filters',
+            'app.directives.input',
             'firebase',
+            'ui.bootstrap',
 		/*Features dependencies*/
             'app.taskBumper',
-            'app.cdsCalendar'
+            'app.cdsCalendar',
+            'app.invoice'
         ])
         .config(routing)
         .constant('FireBaseRoot', 'https://dazzling-inferno-3649.firebaseio.com/')
@@ -30,6 +33,10 @@
             templateUrl:"cds-calendar/cds-calendar.html",
             controller : "cdsCalendarCtrl"
         })
-        ;
+        .when('/invoice/',
+        {
+            templateUrl:"invoice/invoice.html",
+            controller : "invoiceCtrl"
+        });
     }
 })();

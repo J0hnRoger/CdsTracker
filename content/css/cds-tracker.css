@@ -16,5 +16,15 @@
 .cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input.edit-hour {width:35px;}
+
+.task-bumper-view {height: 100%;}
+.task-bumper-view .project{ margin:10px; height: 50%;text-align: center}
+.task-bumper-view .blue{ background-color: #439AF1;}
+.task-bumper-view .red{ background-color: #EE5151;}
+.task-bumper-view .green{ background-color: #84F973;}
+.task-bumper-view .azur{ background-color: #66FFFF;}
+.task-bumper-view .orange{ background-color: #E0875C;}
+
+.invoice-view table input{width:35px;}
 /*State*/
 /*Theme*/
