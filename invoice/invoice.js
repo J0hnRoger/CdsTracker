@@ -5,10 +5,6 @@
         .controller('invoiceCtrl', invoiceCtrl);
 
     function invoiceCtrl($scope, $firebase, FireBaseUrl) {
-    	$scope.tabs = [
-		    { title:'Général' },
-		    { title:'Dynamic Title 2', content:'Dynamic content 2', disabled : true}
-		  ];
 
         activate();
 
