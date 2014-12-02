@@ -9,5 +9,7 @@
 .task-bumper-view .green{ background-color: #84F973;}
 .task-bumper-view .azur{ background-color: #66FFFF;}
 .task-bumper-view .orange{ background-color: #E0875C;}
+
+.invoice-view table input{width:35px;}
 /*State*/
 /*Theme*/

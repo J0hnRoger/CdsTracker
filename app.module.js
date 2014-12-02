@@ -7,20 +7,28 @@
 			'ngRoute',
             'app.directives.timer',
             'app.directives.resizable',
+            'app.directives.input',
             'firebase',
+            'ui.bootstrap',
 		/*Features dependencies*/
             'app.timetracker',
-            'app.taskBumper'
+            'app.taskBumper',
+            'app.invoice'
         ])
         .config(routing)
-        .constant('FireBasUrl', 'https://dazzling-inferno-3649.firebaseio.com/');
+        .constant('FireBaseUrl', 'https://dazzling-inferno-3649.firebaseio.com/');
 
     function routing($routeProvider) {
     	$routeProvider.when('/', 
     	{
     		templateUrl:"task-bumper/task-bumper.html",
     		controller : "taskBumperCtrl"
-    	});
+    	})
+        .when('/invoice/',
+        {
+            templateUrl:"invoice/invoice.html",
+            controller : "invoiceCtrl"
+        });
     }
 
 })();
