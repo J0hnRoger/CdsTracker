@@ -7,14 +7,17 @@ describe('taskBumperController', function() {
   beforeEach(inject(function(_$controller_){
     $controller = _$controller_;
   }));
-  
-  describe('', function() {
-    
+     
     var $scope, controller;
 
     beforeEach( function(){
         $scope = {};
         controller = $controller('taskBumperCtrl', { $scope: $scope });
+    });
+
+     it('contient une méthode cleanAngularItem', function() {
+      
+      expect(cleanAngularItem).toBe.not.undefined();
     });
 
     it('contient des projets', function() {
@@ -44,5 +47,6 @@ describe('taskBumperController', function() {
       };
       expect(hasTitle).toBeTruthy();
     });
-   
 });
+
+

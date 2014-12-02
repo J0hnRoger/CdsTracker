@@ -1,11 +1,7 @@
 <div class="task-bumper-view pure-g" resizable style="height:{{windowHeight - 120}}px ">
-		<div ng-repeat="project in projects" class="project pure-u-1-4 {{project.color}}" ng-click="record(project)">
-			<h3>{{project.title}}</h3><div ng-show="project.isActive">
-			<timer start="start"></timer>
-			</div>
+	<div ng-repeat="project in projects" class="project pure-u-1-4 {{project.color}}" ng-click="record(project)">
+		<h3>{{project.title}}</h3><div ng-show="project.isActive">
+		<timer start="start"></timer>
 		</div>
-		<div class="project pure-u-1-4" >
-			<h3>Gérer mes projets</h3>
-		</div>
-		
+	</div>
 </div>

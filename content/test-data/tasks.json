@@ -1,0 +1,27 @@
+ [
+    {
+        "project": { "title" : "CCPA", "colors" : "azur"},
+        "duration": 0,
+        "startDate" : "2014-11-26T10:44:17.779Z"
+    },
+    {
+        "project": { "title" : "PMU", "colors" : "green"},
+        "duration": 0,
+        "startDate" : "2014-11-27T10:44:17.779Z"
+    },
+    {
+        "project": { "title" : "Expanscience", "colors" : "orange"},
+        "duration": 0,
+        "startDate" : "2014-11-28T10:44:17.779Z"
+    },
+    {
+        "project": { "title" : "CDS", "colors" : "blue"},
+        "duration": 0,
+        "startDate" : "2014-11-30T10:44:17.779Z"
+    },
+	{
+        "project": { "title" : "Nicoll", "colors" : "red"},
+        "duration": 0,
+        "startDate" : "2014-11-28T10:44:17.779Z"
+    }
+]

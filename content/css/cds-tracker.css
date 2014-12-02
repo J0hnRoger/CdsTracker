@@ -1,13 +1,20 @@
 /*Base*/
-.pure-g {width: 75%;margin:0 auto;}
+.blue{ background-color: #439AF1;}
+.red{ background-color: #EE5151;}
+.green{ background-color: #84F973;}
+.azur{ background-color: #66FFFF;}
+.orange{ background-color: #E0875C;}
 /*Layout*/
+
 /*Module*/
-.task-bumper-view {height: 100%;}
-.task-bumper-view .project{ margin:10px; height: 50%;text-align: center}
-.task-bumper-view .blue{ background-color: #439AF1;}
-.task-bumper-view .red{ background-color: #EE5151;}
-.task-bumper-view .green{ background-color: #84F973;}
-.task-bumper-view .azur{ background-color: #66FFFF;}
-.task-bumper-view .orange{ background-color: #E0875C;}
+.task-bumper-view {height: 100%;color:white;}
+.task-bumper-view .project{ margin:10px; height: 50%;text-align: center;color:black;}
+
+.cds-calendar-view {margin:0 auto;}
+.cds-calendar-view .day{padding:10px;text-align: center;border-right: solid 1px black;height: 830px;}
+.cds-calendar-view .task{margin: 5px;padding: 5px;}
+.cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
+.cds-calendar-view .task input.edit-hour {width:35px;}
 /*State*/
 /*Theme*/
