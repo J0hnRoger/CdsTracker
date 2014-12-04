@@ -40,8 +40,6 @@
             return totalTime * decimal;
         }
 
-
-
         function getTasksUrl (date) {
             if (!day instanceof Date)
                 return;
