@@ -55,6 +55,7 @@
                         var timeSpent = 0;
                         day.forEach(function (task) {
                             timeSpent += task.duration;
+                            
                         });
                         days[index].tasks = day;
                         days[index].timeSpent = timeSpent;

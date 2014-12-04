@@ -14,22 +14,23 @@
         activate();
 
         function activate() {
-            var firstDayOfTheWeek = dateService.getFirstWeekDayTime();
 
             projectsService.workInProgress().then(function(projectName){
                 $scope.IWorkingOn = projectName;
             });
 
-            var currDay = firstDayOfTheWeek;
-            var week = tasksService.getTasksByWeek(currDay)
+            
+            var day = dateService.getFirstWeekDayTime();
+            var week = tasksService.getTasksByWeek(day)
                     .then(function (week) {                    
                         $scope.week = week;
-            });
+                });
         }
 
         $scope.updateTaskTime = function(task, day, time){
-            task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
-            day.tasks.$save();
+            //task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
+            day.tasks[task.id].$priority = task.$priority;
+            //day.tasks.$save();
         }
     }
 })();

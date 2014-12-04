@@ -16,6 +16,8 @@
 .cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input.edit-hour {width:35px;}
+.cds-calendar-view .glyphicon {font-size: 35px;}
+
 
 .task-bumper-view {height: 100%;}
 .task-bumper-view .project{ margin:10px; height: 50%;text-align: center}
