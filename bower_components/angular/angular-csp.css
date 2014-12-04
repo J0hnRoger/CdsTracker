@@ -4,7 +4,6 @@
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
 .ng-cloak, .x-ng-cloak,
-<<<<<<< HEAD
 .ng-hide:not(.ng-hide-animate) {
 .ng-hide {
   display: none !important;
