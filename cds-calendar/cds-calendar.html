@@ -17,9 +17,9 @@
 							ng-show="editing"
 							autofocus="editing"
 							ng-value="task.duration | passedTime"
-							ng-blur="updateTaskTime(task, day, $event.target.value); editing = false;" />
+							ng-blur="updateTaskTime(task, $event.target.value); editing = false;" />
 				<span class="hour"  ng-hide="editing" ng-click="editing = true">{{task.duration | invoicedTime}}</span>
-				<p><input class="red" type="text"></input></p>
+				<p><input class="red" type="text" ng-value="task.description" ng-blur="updateTaskDescription(task, $event.target.value);"></input></p>
 			</div>
 		</div>
 	</div>

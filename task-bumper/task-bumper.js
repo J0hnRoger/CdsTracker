@@ -4,7 +4,7 @@
         .module('app.taskBumper', [])
         .controller('taskBumperCtrl', taskBumperCtrl);
 
-    function taskBumperCtrl($scope, $window, $firebase, FireBaseRoot) {
+    function taskBumperCtrl($scope, $window, $firebase, FireBaseRoot, dateService) {
         
         $scope.title = 'taskBumperCtrl';
         $scope.projects = [];
@@ -19,8 +19,8 @@
         	});
             
         	//Get All Projects
-    	   	var ref = new Firebase(FireBaseRoot);
-	  		var projectSync = $firebase(ref.child('projects'));
+    	   	var projectRef = new Firebase(FireBaseRoot);
+	  		var projectSync = $firebase(projectRef.child('projects'));
 
 	        var projects = projectSync.$asObject();
 	        projects.$loaded();
@@ -33,24 +33,25 @@
         		if (project.isActive){
         			var s = Math.floor((Date.now() - $scope.start) / 1000);
 
-        			var newTask = {
+        			var task = {
         				project :  { title : project.title, color : project.color },
         				startDate : now,
         				duration : s
         			};
+                    var serializedTask = JSON.parse(angular.toJson(task));
 
-    				tasksSync = $firebase(ref.child('tasks'));
-    				var task = JSON.parse(angular.toJson(newTask));
-                    ref.child('tasks').push(task).setPriority(now);
-
-        			project.isActive = false;
+                    var url = dateService.getTasksUrl(new Date()) + "/" + now;
+                    var taskRef = new Firebase(url);
+                    tasksSync = $firebase(taskRef);
+                    tasksSync.$set(serializedTask);
 
         			$scope.start = 0;
+                    project.isActive = false;
         		}
         		else{
         			$scope.start = Date.now();
         			project.isActive = true;
-                    ref.child("activeProject").set(project.title);
+                    projectRef.child("activeProject").set(project.title);
         		}
         		projectSync.$asArray().$save(parseInt(project.$id));
         	}

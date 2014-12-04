@@ -6,24 +6,25 @@
         .factory('dateService', factory);
 
     /* @ngInject */
-	    function factory() {
-
+	    function factory(FireBaseRoot) {
+            var taskPrefixe = "tasks"
         var service = {
             getFirstWeekDayTime : getFirstWeekDayTime,
             getDayBeggining : getDayBeggining,
-            getTimeStampFromDecimal : getTimeStampFromDecimal
+            getTimeStampFromDecimal : getTimeStampFromDecimal,
+            getTasksUrl : getTasksUrl,
+            getMonday : getMonday
         };
 
         return service;
 
         ////////////////
 
-        function getDayBeggining(){
-        	var curr = new Date();
-        	curr.setHours(0)
-        	curr.setMinutes(0)
-        	curr.setSeconds(0);
-        	return curr;
+        function getDayBeggining(day){
+        	day.setHours(0);
+        	day.setMinutes(0);
+        	day.setSeconds(0);
+        	return day;
         }
 
         function getFirstWeekDayTime(){
@@ -37,6 +38,27 @@
         function getTimeStampFromDecimal(strDecimal, totalTime){
             var decimal = +strDecimal;
             return totalTime * decimal;
+        }
+
+
+
+        function getTasksUrl (date) {
+            if (!day instanceof Date)
+                return;
+         
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDay();
+
+            return FireBaseRoot + taskPrefixe + "/" + year + "/" + month + "/" + day + "/tasks/";
+        }
+
+        function getMonday (now) {
+             if (!now instanceof Date)
+                return;
+            var curr = getDayBeggining(now).getDay() - 1;
+          
+            return new Date(now.setDate(now.getDate() - curr));
         }
     }
 })();

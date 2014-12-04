@@ -6,9 +6,8 @@
         .controller('cdsCalendarCtrl', cdsCalendarCtrl);
 
     /* @ngInject */
-    function cdsCalendarCtrl($scope, tasksService, dateService, projectsService, $firebase, FireBaseRoot) {
+    function cdsCalendarCtrl($scope, dateService, tasksService, projectsService, $firebase, FireBaseRoot) {
         
-        $scope.title = 'cdsCalendarCtrl';
         $scope.loading = true;
        
         activate();
@@ -18,19 +17,25 @@
             projectsService.workInProgress().then(function(projectName){
                 $scope.IWorkingOn = projectName;
             });
-
             
-            var day = dateService.getFirstWeekDayTime();
-            var week = tasksService.getTasksByWeek(day)
+            var monday = dateService.getMonday(new Date());
+            var week = tasksService.getWeeksTasks(monday)
                     .then(function (week) {                    
                         $scope.week = week;
                 });
         }
 
-        $scope.updateTaskTime = function(task, day, time){
+        $scope.updateTaskTime = function(task, time){
             //task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
-            day.tasks[task.id].$priority = task.$priority;
+           //updateTask(task, description);
             //day.tasks.$save();
         }
+
+         $scope.updateTaskDescription = function(task, description){
+            //task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
+            tasksService.updateTask(task, description);
+            //day.tasks.$save();
+        }
+
     }
 })();
