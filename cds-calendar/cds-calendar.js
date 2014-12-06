@@ -19,10 +19,11 @@
             });
             
             var monday = dateService.getMonday(new Date());
-            var week = tasksService.getWeeksTasks(monday)
+            tasksService.getWeeksTasks(monday)
                     .then(function (week) {                    
                         $scope.week = week;
                 });
+
         }
 
         $scope.update = function(task, $event){
@@ -33,5 +34,8 @@
             tasksService.remove(task);
         }
 
+        $scope.add = function(task) {
+
+        }
     }
 })();
