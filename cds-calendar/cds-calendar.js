@@ -25,16 +25,12 @@
                 });
         }
 
-        $scope.updateTaskTime = function(task, time){
-            //task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
-           //updateTask(task, description);
-            //day.tasks.$save();
+        $scope.update = function(task, $event){
+           tasksService.updateTask(task);
         }
 
-         $scope.updateTaskDescription = function(task, description){
-            //task.duration =  dateService.getTimeStampFromDecimal(time, day.timeSpent);
-            tasksService.updateTask(task, description);
-            //day.tasks.$save();
+        $scope.remove = function (task) {
+            tasksService.remove(task);
         }
 
     }

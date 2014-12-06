@@ -8,7 +8,6 @@
         .filter('invoicedTime', invoicedTime)
         .filter('passedTime', passedTime);
 
-
     function friendlyHour (){
         return function (time) {
             time = parseInt(time);

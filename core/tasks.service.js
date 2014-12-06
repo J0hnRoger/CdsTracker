@@ -14,7 +14,8 @@
             getTasksByDay: getTasksByDay,
             getTasksByWeek : getTasksByWeek,
             getWeeksTasks : getWeeksTasks,
-            updateTask : updateTask
+            updateTask : updateTask,
+            remove : remove
 
         };
         return service;
@@ -139,7 +140,7 @@
                 .then(function (tasksByDay) {
                     angular.forEach(tasksByDay, function(day, index) {
                         var timeSpent = 0;
-                        day.forEach(function (task) {
+                            day.forEach(function (task) {
                             timeSpent += task.duration;
                         });
                         days[index].tasks = day;
@@ -150,12 +151,17 @@
             return deferred.promise;
         }
 
-        function updateTask(task, description) {
+        function updateTask(task) {
             var url = dateService.getTasksUrl(new Date(task.startDate)) + "/" + task.startDate;
-            var taskRef = new Firebase(url + "/description");
+            var taskRef = new Firebase(url);
             var tasksSync = $firebase(taskRef);
-            tasksSync.$set(description);
+            tasksSync.$update(task);
+        }
 
+        function remove (task) {
+            var url = dateService.getTasksUrl(new Date(task.startDate)) + "/" + task.startDate;
+            var taskRef = new Firebase(url);
+            taskRef.remove();
         }
     }
 })();
