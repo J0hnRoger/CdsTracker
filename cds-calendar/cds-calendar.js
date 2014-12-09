@@ -30,11 +30,6 @@
                 });
         }
 
-
-        $scope.update = function(task, $event){
-           //tasksService.updateTask(task);
-        }
-
         $scope.save = function (task, day ) {
           var taskRef = tasksService.getTask(task.$id);
           task.project = _.omit(task.project, ['$$hashKey', '$id', '$priority'])
@@ -73,35 +68,5 @@
             })
             return timeSpent;
         }
-
-        // Custom autocomplete for projects name
-        $scope.projectsAutoComplete = {
-            source: function (request, response) {
-                var array = [];
-                angular.forEach($scope.projects, function (project) {
-                    var name = project.title;
-                    if(fuzzy(name, request.term)){
-                        array.push({label: name, value: name});
-                    }
-                });
-                response(array);
-
-                function fuzzy(value, search){
-                var regexp = '\\b(.*)';
-                    for(var i in search){
-                        regexp += '('+search[i]+')(.*)';
-                    }
-                    regexp += '\\b';
-                    return value.match(new RegExp(regexp,'i'));
-                }
-            },
-            minLength: 0,
-            select: function (event, ui) {
-                if(ui.item.label){
-                    elem.trigger('input');
-                }
-                return false;
-            }
-        };
     }
 })();
