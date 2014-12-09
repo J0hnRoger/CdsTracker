@@ -1,6 +1,6 @@
 // Auto focus field
 angular.module('app.directives.input', [])
-.directive('autofocus2', function () {
+.directive('autofocus', function () {
     return {
         scope: {
             autofocus: '='
@@ -18,14 +18,14 @@ angular.module('app.directives.input', [])
     return {
         restrict: 'A',
         scope: {
-            autofocus : '=',
+            focus : '=',
             autocompleteconfig: '=',
             task : '=', 
             projects : '='
         },
         link: function (scope, elem) {
 
-            scope.$watch('autofocus', function(value){
+            scope.$watch('focus', function(value){
                 if(value){
                     elem[0].focus();
                 }

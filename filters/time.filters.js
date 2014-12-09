@@ -6,7 +6,8 @@
         ])
         .filter('friendlyHour', friendlyHour)
         .filter('invoicedTime', invoicedTime)
-        .filter('passedTime', passedTime);
+        .filter('passedTime', passedTime)
+        .filter('minutesTime', minutesTime);
 
     function friendlyHour (){
         return function (time) {
@@ -25,9 +26,15 @@
         };
     }
 
-     function passedTime() {
+    function passedTime() {
         return function (s, totalSeconds) {
             return Math.round(s / totalSeconds * 100) / 100;
+        };
+    }
+
+    function minutesTime(){
+        return function(s){
+            return Math.floor(s / 60);
         };
     }
 

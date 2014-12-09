@@ -53,7 +53,7 @@
             var defaultTask = { 
                     duration : 3600,
                     startDate : day.startDate,
-                    project : { title : "Default", color : "grey"},
+                    project : { title : "Default", color : "grey"}
             };
 
             tasksService.add(defaultTask, day, function(ref){
