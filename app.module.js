@@ -6,12 +6,15 @@
 		/*Angular dependencies*/
 			'ngRoute',
             'app.directives.timer',
+            'toaster',
             'app.directives.resizable',
             'app.service.date',
             'app.service.tasks',
+            'app.service.underscore',
             'app.service.projects',
             'app.filters',
             'app.directives.input',
+            'app.directives.totalDay',
             'firebase',
             'ui.bootstrap',
 		/*Features dependencies*/

@@ -40,17 +40,15 @@
             return totalTime * decimal;
         }
 
-
-
         function getTasksUrl (date) {
             if (!day instanceof Date)
                 return;
          
             var year = date.getFullYear();
             var month = date.getMonth() + 1;
-            var day = date.getDay();
+            var day = date.getDate();
 
-            return FireBaseRoot + taskPrefixe + "/" + year + "/" + month + "/" + day + "/tasks/";
+            return FireBaseRoot + taskPrefixe + "/" + year + "/" + month + "/" + day + "/";
         }
 
         function getMonday (now) {

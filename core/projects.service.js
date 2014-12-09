@@ -9,7 +9,8 @@
     function factory($firebase, FireBaseRoot, $q) {
         var service = {
         	workInProgress : getCurrentProject,
-            projects : false
+            projects : false,
+            getProjects : getProjects
         };
         return service;
 
@@ -27,7 +28,11 @@
                 deffered.resolve(projectName);
             });
             return deffered.promise;
-            
+        }
+
+        function getProjects(){
+            var ref = new Firebase(FireBaseRoot + "projects");
+            return $firebase(ref).$asArray().$loaded();
         }
     }
 })();

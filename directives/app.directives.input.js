@@ -1,5 +1,6 @@
 // Auto focus field
-angular.module('app.directives.input', []).directive('autofocus', function () {
+angular.module('app.directives.input', [])
+.directive('autofocus2', function () {
     return {
         scope: {
             autofocus: '='
@@ -10,6 +11,53 @@ angular.module('app.directives.input', []).directive('autofocus', function () {
                     element[0].focus();
                 }
             })
+        }
+    };
+})
+.directive('autocomplete', function () {
+    return {
+        restrict: 'A',
+        scope: {
+            autofocus : '=',
+            autocompleteconfig: '=',
+            task : '=', 
+            projects : '='
+        },
+        link: function (scope, elem) {
+
+            scope.$watch('autofocus', function(value){
+                if(value){
+                    elem[0].focus();
+                }
+            })
+
+            elem.autocomplete({
+                source: function (request, response) {
+                    var array = [];
+                    angular.forEach(scope.projects, function (project) {
+                        var name = project.title;
+                        if(fuzzy(name, request.term)){
+                            array.push({label: name, value: name});
+                        }
+                    });
+                    response(array);
+                },
+                select: function (event, ui) {
+                    if(ui.item.label){
+                        scope.task.project = scope.projects.$getRecord(ui.item.label);
+                    }
+                },
+                minLength : 0
+            });
+            function fuzzy(value, search){
+            var regexp = '\\b(.*)';
+                for(var i in search){
+                    regexp += '('+search[i]+')(.*)';
+                }
+                regexp += '\\b';
+                return value.match(new RegExp(regexp,'i'));
+            }
+
         }
     };
 });

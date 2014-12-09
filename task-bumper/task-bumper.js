@@ -40,7 +40,7 @@
         			};
                     var serializedTask = JSON.parse(angular.toJson(task));
 
-                    var url = dateService.getTasksUrl(new Date()) + "/" + now;
+                    var url = dateService.getTasksUrl(new Date()) + "tasks/" + now;
                     var taskRef = new Firebase(url);
                     tasksSync = $firebase(taskRef);
                     tasksSync.$set(serializedTask);
