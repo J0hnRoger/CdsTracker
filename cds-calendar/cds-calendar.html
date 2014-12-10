@@ -4,7 +4,7 @@
 
 	<div class="row">
 		<h1>CDS Calendar </h1>
-		<h3>Projet en cours de traitement : {{IWorkingOn}}</h3>	
+		<h3>Projet en cours de traitement : {{IWorkingOn}} {{total}}</h3>	
 	</div>
 	<div class="row">
 		<div class="day col-md-2" ng-repeat="day in week" ui-sortable >
@@ -18,7 +18,8 @@
 				 task="task" autocomplete projects="projects"	
 				 focus="editing"></input>
 					<span class="glyphicon glyphicon-time"></span>
-					<span class="hour" ng-click="editingTask=true;" ng-hide="editingTask">{{task.duration | passedTime:getTotal(day)}}</span>
+					<span class="hour" ng-click="editingTask=true;" ng-hide="editingTask">
+						<decimal-passed-time  tasks="day.tasks" time="task.duration"></decimal-passed-time> </span>
 					<input class="edit-hour" type="text" ng-model="task.duration" ng-show="editingTask" ng-blur="save(task, day);editingTask=false;" autofocus="editingTask">
 				<span class="hour"><span class="glyphicon glyphicon glyphicon-euro"></span>
 				<span class="hour" >{{task.duration | invoicedTime}}</span>
