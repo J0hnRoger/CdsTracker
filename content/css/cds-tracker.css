@@ -25,7 +25,7 @@
 .cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px; color: #333333}
 .cds-calendar-view .glyphicon-plus {text-shadow:none; border:none;font-size: 20px; display: inline-block;float: right;}
 .cds-calendar-view .task .edit-title {font-size: 18px;font-weight: 500;display: block;margin:0 auto; width: 80px;text-align: center}
-
+.cds-calendar-view .task .task-hour {float: left;font-size: 18px}
 .cds-calendar-view .bg-hour {font-size:30pt;text-align: right;margin-bottom: 0px;float: right;position: absolute;bottom:0;}
 
 .task-bumper-view {height: 100%;}

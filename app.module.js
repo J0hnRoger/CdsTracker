@@ -5,6 +5,7 @@
         .module('app', [
 		/*Angular dependencies*/
 			'ngRoute',
+            'ui',
             'app.directives.timer',
             'toaster',
             'app.directives.resizable',

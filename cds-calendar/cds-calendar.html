@@ -7,13 +7,13 @@
 		<h3>Projet en cours de traitement : {{IWorkingOn}}</h3>	
 	</div>
 	<div class="row">
-		<div class="day col-md-2" ng-repeat="day in week">
+		<div class="day col-md-2" ng-repeat="day in week" ui-sortable >
 			<a ng-click="add(day)"><span class="glyphicon glyphicon-plus"></span></a>
 			<h3>{{day.name}}</h3>
-			<span class="bg-hour">{{ getTotal(day) | friendlyHour}}</span>
 			<div heightify="task.duration" ng-repeat="task in day.tasks" ng-class="task.project.color" class="task animated" >
+			<div class="task-hour">{{task.duration | friendlyHour}}</div>
 				<a class="close" ng-click="remove(task, day)"><span class="glyphicon glyphicon-remove"></span></a>
-				<h4 ng-hide="editing" ng-click="editing=true;" >{{task.project.title}}</h4>
+				<h4 ng-hide="editing" ng-click="task.project.title = '';editing=true;" >{{task.project.title}}</h4>
 				<input class="edit-title" type="text" ng-show="editing" ng-blur="save(task, day);editing=false;"
 				 task="task" autocomplete projects="projects"	
 				 focus="editing"></input>
@@ -23,8 +23,8 @@
 				<span class="hour"><span class="glyphicon glyphicon glyphicon-euro"></span>
 				<span class="hour" >{{task.duration | invoicedTime}}</span>
 				<p><input class="red" type="text" ng-model="task.description" ng-blur="save(task, day)"></input></p>
-				<div class="">{{task.duration | friendlyHour}}</div>
 			</div>
+			<span class="bg-hour" total-time tasks="day.tasks" />
 		</div>
 	</div>
 </div>
