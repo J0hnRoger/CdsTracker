@@ -17,13 +17,16 @@
 /*Module*/
 .cds-calendar-view {margin:0 auto;}
 .cds-calendar-view .day{padding:10px;text-align: center;border-right: solid 1px black;height: 830px;}
-.cds-calendar-view .task{margin: 5px;padding: 5px;}
+.cds-calendar-view .task{margin: 5px;padding: 5px;min-height: 150px}
 .cds-calendar-view .task input{border-style: none;color:white; background-color: transparent;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input:focus{border-style: none;color:white;outline: none;border-bottom: dashed 1px black;}
 .cds-calendar-view .task input.edit-hour {width:35px;}
-.cds-calendar-view .glyphicon {font-size: 35px;}
+.cds-calendar-view .glyphicon {font-size: 20px;}
 .cds-calendar-view a.close .glyphicon {text-shadow:none; border:none;font-size: 25px; color: #333333}
 .cds-calendar-view .glyphicon-plus {text-shadow:none; border:none;font-size: 20px; display: inline-block;float: right;}
+.cds-calendar-view .task .edit-title {font-size: 18px;font-weight: 500;display: block;margin:0 auto; width: 80px;text-align: center}
+
+.cds-calendar-view .bg-hour {font-size:30pt;text-align: right;margin-bottom: 0px;float: right;position: absolute;bottom:0;}
 
 .task-bumper-view {height: 100%;}
 .task-bumper-view .project{ margin:10px;text-align: center;min-height: 280px}
@@ -61,5 +64,48 @@
     transform: rotateX(0deg) translatez(30px);
     opacity: 1;
     height: 30px;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    background-image: none;
 }
 /*Theme*/

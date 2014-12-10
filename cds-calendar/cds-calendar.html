@@ -10,19 +10,20 @@
 		<div class="day col-md-2" ng-repeat="day in week">
 			<a ng-click="add(day)"><span class="glyphicon glyphicon-plus"></span></a>
 			<h3>{{day.name}}</h3>
-			<span>{{ getTotal(day) | friendlyHour}}</span>
+			<span class="bg-hour">{{ getTotal(day) | friendlyHour}}</span>
 			<div heightify="task.duration" ng-repeat="task in day.tasks" ng-class="task.project.color" class="task animated" >
 				<a class="close" ng-click="remove(task, day)"><span class="glyphicon glyphicon-remove"></span></a>
 				<h4 ng-hide="editing" ng-click="editing=true;" >{{task.project.title}}</h4>
-				<input class="red" type="text" ng-show="editing" ng-value="task.project.title" ng-blur="save(task, day);editing=false;"
+				<input class="edit-title" type="text" ng-show="editing" ng-blur="save(task, day);editing=false;"
 				 task="task" autocomplete projects="projects"	
 				 focus="editing"></input>
 					<span class="glyphicon glyphicon-time"></span>
 					<span class="hour" ng-click="editingTask=true;" ng-hide="editingTask">{{task.duration | passedTime:getTotal(day)}}</span>
-					<input type="text" ng-model="task.duration" ng-show="editingTask" ng-blur="task.duration;save(task, day);editingTask=false;" autofocus="editingTask">
+					<input class="edit-hour" type="text" ng-model="task.duration" ng-show="editingTask" ng-blur="save(task, day);editingTask=false;" autofocus="editingTask">
 				<span class="hour"><span class="glyphicon glyphicon glyphicon-euro"></span>
 				<span class="hour" >{{task.duration | invoicedTime}}</span>
 				<p><input class="red" type="text" ng-model="task.description" ng-blur="save(task, day)"></input></p>
+				<div class="">{{task.duration | friendlyHour}}</div>
 			</div>
 		</div>
 	</div>
