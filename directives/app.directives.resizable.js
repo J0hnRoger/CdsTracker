@@ -7,12 +7,13 @@
   	function heightify() {
 	    return {
 	    	scope : {
-	    		duration : "=heightify"
+	    		duration : "=heightify",
+	    		maxSize : "="
 	    	},
 	    	link : function (scope, element) {
 	        	//Un jour = 28800s = 800px 
 	        	scope.$watch('duration', function (){
-	        		var height = scope.duration * 800 / 28800;
+	        		var height = scope.duration * parseInt(scope.maxSize) / 28800;
 		        	element.height(height);
 	        	});
 		    }

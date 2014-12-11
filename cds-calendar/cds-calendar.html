@@ -10,7 +10,7 @@
 		<div class="day col-md-2" ng-repeat="day in week" ui-sortable >
 			<a ng-click="add(day)"><span class="glyphicon glyphicon-plus"></span></a>
 			<h3>{{day.name}}</h3>
-			<div heightify="task.duration" ng-repeat="task in day.tasks" ng-class="task.project.color" class="task animated" >
+			<div heightify="task.duration" max-size="600" ng-repeat="task in day.tasks" ng-class="task.project.color" class="task animated" >
 			<div class="task-hour">{{task.duration | friendlyHour}}</div>
 				<a class="close" ng-click="remove(task, day)"><span class="glyphicon glyphicon-remove"></span></a>
 				<h4 ng-hide="editing" ng-click="task.project.title = '';editing=true;" >{{task.project.title}}</h4>
