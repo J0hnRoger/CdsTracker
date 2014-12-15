@@ -5,7 +5,6 @@
         .module('app.service.tasks', [])
         .factory('tasksService', factory);
 
-    /* @ngInject */
     function factory($firebase, FireBaseRoot, $q, DayLength, dateService) {
 
     	var projects = [];

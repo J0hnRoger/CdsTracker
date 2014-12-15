@@ -29,7 +29,8 @@
 .cds-calendar-view .bg-hour {font-size:30pt;text-align: right;margin-bottom: 0px;float: right;position: absolute;bottom:0;}
 
 .task-bumper-view {height: 100%;}
-.task-bumper-view .project{ margin:10px;text-align: center;min-height: 280px}
+.task-bumper-view .project{ margin:10px;text-align: center;min-height: 137px}
+.task-bumper-view .project h3{display:block;}
 
 .invoice-view table input{width:35px;}
 /*State*/
